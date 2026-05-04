@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Study Timer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #f3e8ff;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #6b21a8;
+    }
+
+    #timer {
+      font-size: 60px;
+      margin: 20px 0;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+    }
+
+    .colors button {
+      width: 40px;
+      height: 40px;
+      border: none;
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Study Timer</h1>
+
+  <div id="timer">00:00</div>
+
+  <!-- SET TIME INPUT -->
+  <input type="number" id="setMin" placeholder="Set minutes (e.g. 25)">
+  <br>
+
+  <input type="text" id="remark" placeholder="What are you studying?">
+
+  <br>
+
+  <button onclick="startTimer()">Start</button>
+  <button onclick="pauseTimer()">Pause</button>
+  <button onclick="resetTimer()">Reset</button>
+
+  <div class="colors">
+    <p>Choose Color:</p>
+    <button style="background:#f3e8ff" onclick="changeColor('#f3e8ff')"></button>
+    <button style="background:#d1fae5" onclick="changeColor('#d1fae5')"></button>
+    <button style="background:#fee2e2" onclick="changeColor('#fee2e2')"></button>
+  </div>
+
+  <!-- ALARM -->
+  <audio id="alarm">
+    <source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" type="audio/ogg">
+  </audio>
+
+<script>
+
+let seconds = 0;
+let interval;
+let running = false;
+
+// DISPLAY
+function updateDisplay() {
+  let mins = Math.floor(seconds / 60);
+  let secs = seconds % 60;
+
+  document.getElementById("timer").innerText =
+    String(mins).padStart(2,'0') + ":" + String(secs).padStart(2,'0');
+}
+
+// START TIMER (COUNTDOWN FIXED)
+function startTimer() {
+  if (running) return;
+
+  // if first start, set time
+  if (seconds === 0) {
+    let mins = document.getElementById("setMin").value;
+
+    if (!mins || mins <= 0) {
+      alert("Please set minutes first");
+      return;
+    }
+
+    seconds = mins * 60;
+    updateDisplay();
+  }
+
+  running = true;
+
+  interval = setInterval(() => {
+    seconds--;
+    updateDisplay();
+
+    if (seconds <= 0) {
+      clearInterval(interval);
+      running = false;
+
+      document.getElementById("alarm").play();
+      alert("Time is up");
+    }
+
+  }, 1000);
+}
+
+// PAUSE
+function pauseTimer() {
+  clearInterval(interval);
+  running = false;
+}
+
+// RESET
+function resetTimer() {
+  pauseTimer();
+  seconds = 0;
+  updateDisplay();
+}
+
+// COLORS
+function changeColor(color) {
+  document.body.style.background = color;
+}
+
+</script>
+
+</body>
+</html>
