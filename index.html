@@ -1,119 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>DeborahGaming</title>
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f1a;
-      color: white;
+
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#0d0d16;
+      color:white;
     }
 
-    header {
-      background: #1c1c2e;
-      padding: 15px;
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      color: #7dd3fc;
+    header{
+      background:#151522;
+      padding:20px;
+      text-align:center;
+      font-size:28px;
+      letter-spacing:2px;
+      color:#bfdbfe;
+      font-weight:bold;
+      box-shadow:0 0 10px rgba(0,0,0,0.4);
     }
 
-    .hero {
-      padding: 40px 20px;
-      text-align: center;
+    .hero{
+      text-align:center;
+      padding:60px 20px;
     }
 
-    .hero h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
+    .hero h1{
+      font-size:36px;
+      color:#dbeafe;
+      margin-bottom:15px;
     }
 
-    .hero p {
-      color: #cbd5e1;
-      font-size: 14px;
+    .hero p{
+      color:#94a3b8;
+      max-width:600px;
+      margin:auto;
+      line-height:1.7;
     }
 
-    .btn {
-      margin-top: 15px;
-      padding: 10px 15px;
-      background: #38bdf8;
-      border: none;
-      color: black;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
+    .section{
+      padding:30px 20px;
     }
 
-    .section {
-      padding: 20px;
+    .section-title{
+      font-size:24px;
+      color:#bfdbfe;
+      margin-bottom:20px;
+      border-left:4px solid #93c5fd;
+      padding-left:12px;
     }
 
-    .section h2 {
-      font-size: 18px;
-      border-left: 4px solid #38bdf8;
-      padding-left: 10px;
+    .posts{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
     }
 
-    .card {
-      background: #1c1c2e;
-      padding: 15px;
-      margin-top: 10px;
-      border-radius: 10px;
+    .card{
+      background:#171726;
+      border-radius:16px;
+      overflow:hidden;
+      transition:0.3s;
+      box-shadow:0 0 15px rgba(0,0,0,0.25);
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #64748b;
-      font-size: 12px;
+    .card:hover{
+      transform:translateY(-5px);
     }
+
+    .card img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:18px;
+    }
+
+    .card h2{
+      color:#dbeafe;
+      font-size:20px;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:#94a3b8;
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#64748b;
+      font-size:14px;
+    }
+
   </style>
+
 </head>
 
 <body>
 
 <header>
-  🎮 DeborahGaming
+  DeborahGaming
 </header>
 
 <div class="hero">
-  <h1>Find the Best Low-End Android Games</h1>
-  <p>Offline • Lightweight • No Lag • Fun Games for Everyone</p>
-  <button class="btn">Explore Games</button>
+
+  <h1>
+    Low-End Games & Apps Hub
+  </h1>
+
+  <p>
+    Discover lightweight Android games, offline games, cozy games, and useful apps that run smoothly on weaker devices.
+  </p>
+
 </div>
 
 <div class="section">
-  <h2> Featured Categories</h2>
 
-  <div class="card">🎮 Offline Games</div>
-  <div class="card">📱 Under 100MB Games</div>
-  <div class="card">🧠 Puzzle & Brain Games</div>
-  <div class="card">🧸 Cozy Relaxing Games</div>
-</div>
-
-<div class="section">
-  <h2>📌 Latest Posts</h2>
-
-  <div class="card">
-    Top 10 Offline Games for Low-End Phones (2026)
+  <div class="section-title">
+    Latest Posts
   </div>
 
-  <div class="card">
-    Best Android Games Under 50MB That Don’t Lag
+  <div class="posts">
+
+    <!-- POST 1 -->
+
+    <a href="post1.html">
+
+      <div class="card">
+
+        <img src="subway.jpg">
+
+        <div class="card-content">
+
+          <h2>
+            Best Offline Games for Low-End Android Phones
+          </h2>
+
+          <p>
+            A collection of lightweight Android games that run smoothly without lag or internet connection.
+          </p>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- POST 2 -->
+
+    <a href="post2.html">
+
+      <div class="card">
+
+        <img src="citampi.jpg">
+
+        <div class="card-content">
+
+          <h2>
+            Cozy Android Games to Relax After School
+          </h2>
+
+          <p>
+            Relaxing and aesthetic games perfect for stress relief and peaceful gameplay.
+          </p>
+
+        </div>
+
+      </div>
+
+    </a>
+
+    <!-- POST 3 -->
+
+    <a href="post3.html">
+
+      <div class="card">
+
+        <img src="trafficrider.jpg">
+
+        <div class="card-content">
+
+          <h2>
+            Best Racing Games for Weak Phones
+          </h2>
+
+          <p>
+            Smooth racing games that still look good on low-end Android devices.
+          </p>
+
+        </div>
+
+      </div>
+
+    </a>
+
   </div>
 
-  <div class="card">
-    No WiFi Games You Can Play Anytime
-  </div>
 </div>
 
 <footer>
-  © 2026 DeborahGaming • Built with GitHub Pages
+  © 2026 DeborahGaming • All Rights Reserved
 </footer>
 
 </body>
+
 </html>
